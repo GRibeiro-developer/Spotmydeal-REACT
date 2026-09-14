@@ -144,7 +144,7 @@ A página **Demo** é o ponto alto da interatividade: todo o estado do "loot tra
 link do repositorio Github: https://github.com/GRibeiro-developer/Spotmydeal-REACT
 =======
 link do Github: https://github.com/GRibeiro-developer/Spotmydeal-REACT
->>>>>>> d4edcc9b4f324bb07f3e18eefff9f6ffea1807dd
+
 
 --------------------------------------------------------------------------------------------------------------------------
 
