@@ -140,6 +140,7 @@ A página **Demo** é o ponto alto da interatividade: todo o estado do "loot tra
 
 **Turma:** 1TDSPW · FIAP 2026
 
+link do repositorio Github: https://github.com/GRibeiro-developer/Spotmydeal-REACT
 
 --------------------------------------------------------------------------------------------------------------------------
 
