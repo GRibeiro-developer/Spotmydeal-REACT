@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
+import { useEffect, useState } from 'react';
 
 // Code-splitting: cada página vira um chunk carregado sob demanda.
 const Home = lazy(() => import('./pages/Home'));
@@ -38,3 +39,5 @@ export default function App() {
     </Routes>
   );
 }
+
+

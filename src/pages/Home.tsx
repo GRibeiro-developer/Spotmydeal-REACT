@@ -2,12 +2,35 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 import { usePageMeta } from '../hooks/usePageMeta';
 import './Home.css';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   const { t } = useLanguage();
   usePageMeta("SpotMyDeal — Encontre Seu Cupom", "SpotMyDeal — Encontre seu cupom. Gamificação de cupons de desconto com loot tracker. Projeto FIAP x SoulUp.");
 
+  const [lojas, setLojas] = useState<any[]>([]);
+const [carregando, setCarregando] = useState<boolean>(true);
+
+const API_URL = import.meta.env.VITE_API_URL;
+
+useEffect(() => {
+  fetch(`${API_URL}/lojas`)
+    .then((res) => {
+      if (!res.ok) throw new Error(`Erro: ${res.status}`);
+      return res.json();
+    })
+    .then((dados) => {
+      setLojas(dados);
+      setCarregando(false);
+    })
+    .catch((erro) => {
+      console.error('Falha ao carregar lojas:', erro);
+      setCarregando(false);
+    });
+}, [API_URL]);
+
   return (
+    
     <>
       <section className="hero">
         <div className="hero-bg" />
@@ -195,8 +218,30 @@ export default function Home() {
             <Link to="/demo" className="btn btn-primary">{t('home.hero.btn_demo')}</Link>
             {" "}
             <Link to="/solucao" className="btn btn-outline">{t('home.hero.btn_solution')}</Link>
+
+            
           </div>
         </div>
+        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link to="/demo" className="btn btn-primary">{t('home.hero.btn_demo')}</Link>
+            <Link to="/solucao" className="btn btn-outline">{t('home.hero.btn_solution')}</Link>
+          </div>
+
+          {/* Coloque a lista aqui, fora da div dos botões mas dentro do container */}
+          <div style={{ marginTop: '40px' }}>
+            {carregando ? (
+              <p style={{ textAlign: 'center' }}>A carregar lojas...</p>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {lojas.map((loja) => (
+                  <div key={loja.id || loja.nome} className="p-4 border rounded-lg shadow-sm">
+                    <h3 className="font-bold text-lg">{loja.nome || loja.nomeFantasia || 'Loja'}</h3>
+                    {loja.categoria && <p className="text-sm text-gray-600">{loja.categoria}</p>}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
       </section>
     </>
   );
