@@ -1,0 +1,75 @@
+/* ============================================
+   SPOTMYDEAL — Responsividade
+   Mobile: até 480px
+   Tablet: 481px – 991px
+   Desktop: 992px+
+   ============================================ */
+
+/* === TABLET (≥ 768px) === */
+@media (max-width: 991px) {
+
+  .section { padding: 72px 0; }
+
+  /* FOOTER */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .footer-brand { grid-column: 1 / -1; }
+
+  /* NAVBAR */
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  /* GRIDS */
+  .grid-3 { grid-template-columns: 1fr 1fr !important; }
+  .grid-4 { grid-template-columns: 1fr 1fr !important; }
+}
+
+/* === MOBILE (≤ 480px) === */
+@media (max-width: 480px) {
+
+  .container { padding: 0 16px; }
+  .section { padding: 56px 0; }
+
+  h1 { font-size: 2.4rem; }
+  h2 { font-size: 1.9rem; }
+  h3 { font-size: 1.3rem; }
+
+  /* FOOTER */
+  .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  /* GRIDS */
+  .grid-2,
+  .grid-3,
+  .grid-4 { grid-template-columns: 1fr !important; }
+
+  /* HERO BUTTONS */
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* CARD */
+  .card { padding: 24px; }
+
+  /* INTEGRANTES */
+  .member-links { flex-direction: column; }
+
+  /* CONTATO */
+  .contact-grid { grid-template-columns: 1fr !important; }
+
+  /* FAQ */
+  .faq-question { font-size: 1rem; }
+
+  /* SOLUÇÃO */
+  .loot-demo { grid-template-columns: 1fr !important; }
+  .steps-grid { grid-template-columns: 1fr !important; }
+}
+
+/* === DESKTOP LARGE (≥ 1300px) === */
+@media (min-width: 1300px) {
+  .container { max-width: 1240px; }
+}
