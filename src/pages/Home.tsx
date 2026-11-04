@@ -2,52 +2,13 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 import { usePageMeta } from '../hooks/usePageMeta';
 import './Home.css';
-import { useEffect, useState } from 'react';
 
 
-// Estados para consumir a API
-  const [lojas, setLojas] = useState<any[]>([]);
-  const [carregandoLojas, setCarregandoLojas] = useState<boolean>(true);
 
-  useEffect(() => {
-    const API_URL = import.meta.env.VITE_API_URL;
-
-    fetch(`${API_URL}/lojas`)
-      .then((res) => res.json())
-      .then((data) => {
-        setLojas(data);
-        setCarregandoLojas(false);
-      })
-      .catch((err) => {
-        console.error('Erro ao buscar lojas:', err);
-        setCarregandoLojas(false);
-      });
-  }, []);
 
 export default function Home() {
   const { t } = useLanguage();
   usePageMeta("SpotMyDeal — Encontre Seu Cupom", "SpotMyDeal — Encontre seu cupom. Gamificação de cupons de desconto com loot tracker. Projeto FIAP x SoulUp.");
-
-  const [lojas, setLojas] = useState<any[]>([]);
-const [carregando, setCarregando] = useState<boolean>(true);
-
-const API_URL = import.meta.env.VITE_API_URL;
-
-useEffect(() => {
-  fetch(`${API_URL}/lojas`)
-    .then((res) => {
-      if (!res.ok) throw new Error(`Erro: ${res.status}`);
-      return res.json();
-    })
-    .then((dados) => {
-      setLojas(dados);
-      setCarregando(false);
-    })
-    .catch((erro) => {
-      console.error('Falha ao carregar lojas:', erro);
-      setCarregando(false);
-    });
-}, [API_URL]);
 
   return (
     
@@ -247,59 +208,10 @@ useEffect(() => {
             <Link to="/solucao" className="btn btn-outline">{t('home.hero.btn_solution')}</Link>
           </div>
 
-          {/* Coloque a lista aqui, fora da div dos botões mas dentro do container */}
-          <div style={{ marginTop: '40px' }}>
-            {carregando ? (
-              <p style={{ textAlign: 'center' }}>A carregar lojas...</p>
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {lojas.map((loja) => (
-                  <div key={loja.id || loja.nome} className="p-4 border rounded-lg shadow-sm">
-                    <h3 className="font-bold text-lg">{loja.nome || loja.nomeFantasia || 'Loja'}</h3>
-                    {loja.categoria && <p className="text-sm text-gray-600">{loja.categoria}</p>}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
+          
+                
 
-          {/* Seção de Lojas consumida via API */}
-      <section className="section" style={{ padding: '60px 20px', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '2rem', marginBottom: '24px', fontWeight: 'bold' }}>
-          Lojas Parceiras
-        </h2>
-
-        {carregandoLojas ? (
-          <p>Carregando lojas da base de dados...</p>
-        ) : (
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap: '20px',
-            maxWidth: '1000px',
-            margin: '0 auto'
-          }}>
-            {lojas.map((loja, index) => (
-              <div
-                key={loja.id || index}
-                style={{
-                  background: 'rgba(255, 255, 255, 0.05)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                  borderRadius: '12px',
-                  padding: '20px',
-                  textAlign: 'left'
-                }}
-              >
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '8px' }}>
-                  {loja.nome || loja.nomeFantasia || `Loja #${loja.id}`}
-                </h3>
-                {loja.categoria && <p style={{ color: '#aaa', fontSize: '0.9rem' }}>{loja.categoria}</p>}
-                {loja.endereco && <p style={{ color: '#888', fontSize: '0.85rem', marginTop: '6px' }}>{loja.endereco}</p>}
-              </div>
-            ))}
-          </div>
-        )}
-      </section>
+      
       </section>
     </>
   );
