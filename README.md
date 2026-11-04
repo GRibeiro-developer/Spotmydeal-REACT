@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> bcb44fe4966cfb971a1cb0fa7646f57681b9378e
 # SpotMyDeal — Sprint 3 · Front-End Design Engineering
 
 Este repositório é a **evolução das Sprints 1 e 2** (HTML + CSS + JS puro) para uma aplicação usando React + vite e tailwind, tipada com TypeScript. — seguindo os requisitos da etapa **Front-End Design Engineering**.
@@ -156,4 +159,7 @@ link do Github: https://github.com/GRibeiro-developer/Spotmydeal-REACT
 - auxilio na estruturação do código
 - auxilio na criação dos hooks (via claude)
 - reestruturação de partes do js. (a parte em que eram os cards flutuantes e fotos dos integrantes (VIA CLAUDE) )
+<<<<<<< HEAD
 
+=======
+>>>>>>> bcb44fe4966cfb971a1cb0fa7646f57681b9378e
