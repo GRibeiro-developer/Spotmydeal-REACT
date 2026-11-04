@@ -3,6 +3,8 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 import type { TranslationKey } from '../i18n/translations';
 
+
+
 const NAV_LINKS: { to: string; key: TranslationKey; end?: boolean }[] = [
   { to: '/', key: 'nav.home', end: true },
   { to: '/sobre', key: 'nav.about' },
