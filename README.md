@@ -42,6 +42,9 @@ npm run dev
 # 3. Build de produção
 npm run build
 
+# 4. Video tutorial
+https://youtu.be/tHnYzIzKktU?feature=shared
+
 --------------------------------------------------------------------------------------------------------------------------
 
 ## Páginas / Rotas
