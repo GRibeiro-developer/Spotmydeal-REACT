@@ -27,7 +27,8 @@ export default function Home() {
 
   // 3. Hook useEffect consumindo a API Java do Render automaticamente
   useEffect(() => {
-    const API_URL = import.meta.env.VITE_API_URL;
+    // Se a variável da Vercel falhar, usa a URL direta do Render como fallback
+    const API_URL = import.meta.env.VITE_API_URL || 'https://spotmydeal-sprint4.onrender.com';
 
     fetch(`${API_URL}/lojas`)
       .then((res) => {
@@ -241,6 +242,7 @@ export default function Home() {
       {/* SEÇÃO OBRIGATÓRIA DA SPRINT: CONSUMO DA API JAVA / BANCO ORACLE */}
       <section className="section" style={{ padding: '60px 20px', textAlign: 'center' }}>
         <div className="container">
+          <span className="section-label">INTEGRAÇÃO COM API JAVA (SPRING BOOT)</span>
           <h2 className="section-title" style={{ marginBottom: '24px' }}>
             Lojas <span>Parceiras</span>
           </h2>

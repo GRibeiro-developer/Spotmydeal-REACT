@@ -127,6 +127,23 @@ A página **Demo** é o ponto alto da interatividade: todo o estado do "loot tra
 - CSS customizado (`style.css`, `responsive.css`) foi substituído por **Tailwind CSS** utilitário.
 - Todo o conteúdo textual (Sobre, Solução, FAQ, Integrantes) foi **preservado e reaproveitado**, apenas reorganizado em dados tipados (`src/data`).
 
+## Links do Projeto
+* **Deploy Frontend (Vercel):** [https://spotmydeal-react-ilu6ujba1-gabriel-augusto1.vercel.app/](https://spotmydeal-react-ilu6ujba1-gabriel-augusto1.vercel.app/)
+* **Backend API (Render):** [https://spotmydeal-sprint4.onrender.com](https://spotmydeal-sprint4.onrender.com)
+
+## Tecnologias e Recursos Utilizados
+* **React 18** com **Vite** e **TypeScript**
+* **React Router DOM** (Single Page Application com rotas client-side)
+* **Tailwind CSS & CSS Modular** (Estilização responsiva e acessível)
+* **Hooks do React:** `useState`, `useEffect`, `useContext`
+* **Deploy Contínuo:** Vercel com suporte a variáveis de ambiente (`VITE_API_URL`)
+
+---
+
+## Integração com API REST (DDD Using Java)
+A aplicação consome a API REST desenvolvida na disciplina de Java, hospedada no Render e conectada ao banco de dados Oracle.
+* **Endpoint consumido na Home:** `GET /lojas` (Recupera e lista as lojas parceiras dinamicamente através do hook `useEffect`).
+
 --------------------------------------------------------------------------------------------------------------------------
 
 ## 👥 Equipe
