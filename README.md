@@ -156,7 +156,7 @@ A aplicação consome a API REST desenvolvida na disciplina de Java, hospedada n
 | Tayna Jimenes | 569337 | UX Research · Conteúdo |
 
 **Turma:** 1TDSPW · FIAP 2026
-<<<<<<< HEAD
+
 
 link do repositorio Github: https://github.com/GRibeiro-developer/Spotmydeal-REACT
 
@@ -165,10 +165,13 @@ link do Github: https://github.com/GRibeiro-developer/Spotmydeal-REACT
 
 --------------------------------------------------------------------------------------------------------------------------
 
-## Uso de IA
+## Uso de IA (3° Sprint)
 - Auxílio de escritura do README.MD (nomenclaturas e estruturação de documentação do codigo)
 - Migração do codigo de .HTML para .TSX via extensão (.html to tsx no vscode)
 - transcrição do codigo antigo em .JS para TS (via Claude)
 - auxilio na estruturação do código
 - auxilio na criação dos hooks (via claude)
 - reestruturação de partes do js. (a parte em que eram os cards flutuantes e fotos dos integrantes (VIA CLAUDE) )
+
+## Uso de IA (4° Sprint)
+- Ajustes no home.tsx
