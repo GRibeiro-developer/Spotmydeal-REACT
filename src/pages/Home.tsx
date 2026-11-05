@@ -130,14 +130,31 @@ export default function Home() {
                 return (
                   <div key={jogador.id || index} className="player-row">
                     <span className={`player-rank ${rankClass}`}>{rankBadge}</span>
-                    <img
-                      className="player-avatar"
-                      src={jogador.foto || '/img/EU.jpeg'}
-                      alt={`Avatar de ${jogador.nome}`}
-                      onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).src = '/img/EU.jpeg';
-                      }}
-                    />
+                    <div
+  className="player-avatar"
+  style={{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    background: 'rgba(255, 255, 255, 0.08)',
+    border: '1px solid rgba(18, 205, 222, 0.3)',
+    borderRadius: '50%',
+    width: '40px',
+    height: '40px',
+    minWidth: '40px',
+    color: '#12cdde',
+  }}
+>
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+  </svg>
+</div>
                     <div className="player-info">
                       <div className="player-name">{jogador.nome}</div>
                       <div className="player-pts">
