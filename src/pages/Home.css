@@ -103,13 +103,17 @@
 }
 
 /* FLOATING CARD */
+/* Se tiver position: fixed ou sticky, mude para relative */
 .hero-visual {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 420px;
-  z-index: 1;
+  position: relative !important; /* não fica preso na tela */
+  top: auto !important;
+  right: auto !important;
+}
+
+.loot-card {
+  position: relative !important;
+  /* Se tiver alguma animação de ficar subindo e descendo que incomode: */
+  /* animation: none !important; */
 }
 
 .loot-card {
